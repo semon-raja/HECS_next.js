@@ -1,0 +1,65 @@
+.focusContainer {
+  width: 85%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 50px 0;
+}
+
+.focusText,
+.focusImageCard {
+  flex: 1;
+}
+
+.focusText h2 {
+  font-size: 54px;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.focusText p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #5c6575;
+}
+
+.focusImageCard {
+  background: linear-gradient(180deg, #b8eab8 0%, #e8f5e8 40%, transparent 100%);
+  border-radius: 18px;
+  padding: 32px 14px 14px;
+}
+
+.focusImageCard img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.focusImageCard:hover img {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 1024px) {
+  .focusContainer {
+    width: 92%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .focusText h2 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .focusText h2 {
+    font-size: 34px;
+  }
+
+  .focusText p {
+    font-size: 16px;
+  }
+}

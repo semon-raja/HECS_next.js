@@ -1,0 +1,165 @@
+.recentWorkSection {
+  width: 88%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.recentWorkHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 42px;
+}
+
+.recentWorkHeader h2 {
+  font-size: var(--h2);
+  font-weight: 700;
+  color: var(--dark);
+  margin-top: 8px;
+}
+
+.recentWorkNav {
+  display: flex;
+  gap: 14px;
+}
+
+.recentWorkNav button {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--white);
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+}
+
+.recentWorkNav button:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+
+.recentWorkWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.workCard {
+  position: relative;
+  flex: 0 0 calc(33.333% - 18px);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 510px;
+  cursor: pointer;
+  box-shadow: 0 6px 28px rgba(16, 24, 40, 0.10);
+  transition: transform 0.42s ease, box-shadow 0.42s ease;
+}
+
+.workCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(16, 24, 40, 0.18);
+}
+
+.workCardImgWrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.workCardImgWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.workCard:hover .workCardImgWrap img {
+  transform: scale(1.12);
+}
+
+.workLocation {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(6px);
+  padding: 7px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+.workLocation i {
+  color: var(--green);
+  font-size: 11px;
+}
+
+.workInfo {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 20px 24px 24px;
+  z-index: 2;
+  border-radius: 14px;
+  transition: background 0.3s;
+}
+
+.workClient {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.workInfo h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.workInfo p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .workCard {
+    flex: 0 0 100%;
+    height: 480px;
+  }
+  .recentWorkWrapper {
+    padding-right: 0;
+  }
+  .recentWorkTrack {
+    gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .recentWorkSection {
+    width: 92%;
+  }
+}

@@ -1,0 +1,150 @@
+.careerOpenings {
+  padding: 50px 0 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.careerOpeningsInner {
+  width: 86%;
+  max-width: 1540px;
+  padding: 120px 70px 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #e6f3f4 0%, #f4f7f3 50%, #edf6e6 100%);
+  border-radius: 28px;
+}
+
+.careerOpeningsInner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/line-bg.png");
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  opacity: 0.12;
+  pointer-events: none;
+  border-radius: 28px;
+}
+
+.careerOpeningsInner > * {
+  position: relative;
+  z-index: 2;
+}
+
+.careerOpenings h2 {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--dark);
+  margin-bottom: 22px;
+}
+
+.careerOpenings p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 860px;
+  margin: 0 auto 32px;
+}
+
+.careerButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 28px 0 35px;
+}
+
+.careerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 32px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.22s, transform 0.18s;
+}
+
+.careerBtn:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.careerNote {
+  font-size: 16px !important;
+  color: var(--muted) !important;
+  margin-bottom: 20px !important;
+}
+
+.careerDropBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 52px;
+  background: var(--green);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.22s, transform 0.18s;
+}
+
+.careerDropBtn:hover {
+  background: var(--darkgreen);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .careerOpenings {
+    padding: 20px 0 40px;
+  }
+  .careerOpeningsInner {
+    width: 92%;
+    padding: 50px 22px;
+  }
+  .careerOpenings h2 {
+    font-size: 38px;
+    line-height: 1.05;
+    margin-bottom: 18px;
+  }
+  .careerOpenings p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .careerButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 28px 0 35px;
+  }
+  .careerBtn {
+    height: 48px;
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: 12px;
+    width: auto;
+    min-width: auto;
+  }
+  .careerNote {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+  }
+  .careerDropBtn {
+    width: auto;
+    min-width: 140px;
+    height: 44px;
+    font-size: 14px;
+    padding: 0 24px;
+  }
+}

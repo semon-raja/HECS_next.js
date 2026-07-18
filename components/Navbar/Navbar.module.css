@@ -1,0 +1,460 @@
+/* ============================================================
+   NAVBAR — scoped CSS Module
+   Covers: .navbar, .logo, .nav-panel, .nav-links, .nav-item,
+           .dropdown, .mega-dropdown, .nav-cta, .hamburger,
+           .nav-right-cluster, .nav-overlay, .nav-close,
+           .nav-panel-header, .dropdown-toggle, .dropdown-row
+   ============================================================ */
+
+/* ---- Core navbar bar ---- */
+.navbar {
+  position: relative;
+  height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 70px;
+  background: var(--white);
+  backdrop-filter: blur(55px);
+  z-index: 999;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease;
+}
+
+/* Scroll states — applied via navClass prop from Header.tsx */
+.navbar.blur {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---- Logo ---- */
+.logo {
+  /* flex container so logo img aligns correctly */
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* ---- Nav panel (desktop: contents, mobile: slide-in drawer) ---- */
+.navPanel {
+  display: contents;
+}
+
+.navPanelHeader {
+  display: none;
+}
+
+.navPanelLogo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.navClose {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ---- Nav links list ---- */
+.navLinks {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 36px;
+  list-style: none;
+}
+
+/* ---- Nav item ---- */
+.navItem {
+  position: relative;
+}
+
+/* ---- Individual link ---- */
+.navLinks li a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.22s;
+  outline: none;
+}
+
+/* Underline animation */
+.navLinks li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  transition: width 0.25s ease;
+}
+
+.navLinks li a:hover {
+  color: var(--green);
+}
+
+.navLinks li a:hover::after {
+  width: 100%;
+}
+
+/* ---- Dropdown row (link + toggle button) ---- */
+.dropdownRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Dropdown toggle button ---- */
+.dropdownToggle {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: inherit;
+  font-size: 14px;
+}
+
+.dropdownToggle i {
+  transition: transform 0.3s;
+  pointer-events: none;
+}
+
+/* ---- Dropdown container ---- */
+.dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown > a i {
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Desktop: rotate chevron on hover */
+.dropdown:hover > a i {
+  transform: rotate(-90deg);
+}
+
+.dropdown:hover .dropdownToggle i {
+  transform: rotate(-90deg);
+}
+
+/* ---- Mega dropdown panel ---- */
+.megaDropdown {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 360px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 0;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+/* Desktop hover */
+.dropdown:hover .megaDropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile open state (controlled via React state) */
+.megaDropdown.open {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* Suppress underline animation on dropdown links */
+.navLinks li.dropdown .megaDropdown a::after {
+  content: none;
+  display: none;
+}
+
+.navLinks li.dropdown .megaDropdown a:hover {
+  color: #101828;
+}
+
+/* Links inside mega dropdown */
+.megaDropdown a {
+  display: block;
+  padding: 18px 38px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #101828;
+  line-height: 1.4;
+  transition: 0.25s;
+  outline: none;
+  border-left: none;
+}
+
+/* ---- Mobile open state for dropdown container ---- */
+.dropdown.mobileOpen .megaDropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.dropdown.mobileOpen .dropdownToggle i {
+  transform: rotate(180deg);
+}
+
+/* ---- CTA button ---- */
+.navCta {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Satoshi', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.22s, transform 0.18s;
+  white-space: nowrap;
+}
+
+.navCta:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* ---- Right cluster (CTA + hamburger) ---- */
+.navRightCluster {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---- Hamburger ---- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ---- Overlay (dims page when drawer is open on mobile) ---- */
+.navOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 997;
+}
+
+.navOverlay.open {
+  display: block;
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet / Mobile nav (≤ 1024px)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .navbar {
+    height: 90px;
+    padding: 0 14px;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .navRightCluster {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navCta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    white-space: nowrap;
+    margin-right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+  }
+
+  /* Slide-in drawer */
+  .navPanel {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    max-width: 86vw;
+    height: 100vh;
+    background: var(--white);
+    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 998;
+    transition: right 0.35s ease;
+  }
+
+  .navPanel.open {
+    right: 0;
+  }
+
+  .navItem {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .navPanelHeader {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navLinks {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex: 1;
+    overflow-y: auto;
+    background: transparent;
+    box-shadow: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 24px 30px;
+    transition: none;
+  }
+
+  .navLinks > li > a {
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .megaDropdown {
+    display: none;
+    position: static;
+    width: 100%;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    min-width: unset;
+    top: unset;
+    left: unset;
+  }
+
+  .megaDropdown.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .megaDropdown a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    font-size: 15px;
+  }
+
+  .dropdownRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .dropdownRow a {
+    flex: 1;
+    border-bottom: none;
+  }
+
+  .dropdownToggle {
+    padding: 14px 4px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Phone (≤ 600px)
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .navCta {
+    order: 2;
+    font-size: 12px;
+    padding: 9px 13px;
+  }
+
+  .hamburger {
+    order: 3;
+  }
+}

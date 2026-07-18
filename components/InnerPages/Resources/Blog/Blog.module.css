@@ -1,0 +1,115 @@
+.blogSection {
+    padding: 100px 0 80px;
+    background: #fff;
+    border-top: 1px solid #e8ede8;
+}
+
+.blogInner {
+    width: 82%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.blogTopRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.blogHeading {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.seeAllLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green);
+    text-decoration: none;
+    transition: gap 0.2s;
+}
+
+.seeAllLink:hover {
+    gap: 12px;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.blogCard {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e8ede8;
+}
+
+.blogCardImg {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.blogCardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blogCardBody {
+    padding: 20px;
+}
+
+.newsTag {
+    display: inline-block;
+    background: #e6f2e0;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.blogCardBody h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .blogGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .blogGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .blogTopRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .blogInner {
+        width: 90%;
+    }
+
+    .blogSection {
+        padding: 60px 0 60px;
+    }
+
+    .blogHeading {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,95 @@
+/* ============================================================
+   FLOATING BUTTONS — scoped CSS Module
+   Covers: .floatingButtons, .whatsappBtn, .scrollTopBtn,
+           .messageBtn and their :hover / .visible states.
+   No shared utilities — all styles are exclusive to this
+   component.
+   ============================================================ */
+
+/* ---- Fixed container — bottom-right corner ---- */
+.floatingButtons {
+  position: fixed;
+  right: 30px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 900;
+}
+
+/* ---- WhatsApp button ---- */
+.whatsappBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--darkgreen);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.whatsappBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* ---- Scroll-to-top button ---- */
+/* Hidden by default; JS adds .visible when user scrolls > 300px */
+.scrollTopBtn {
+  width: 54px;
+  height: 54px;
+  background: var(--green);
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  position: relative;
+  border: none;
+}
+
+/* Visible state — applied via React state */
+.scrollTopBtn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.scrollTopBtn i {
+  font-size: 22px;
+  color: #fff;
+}
+
+/* ---- Message / Enquiry button ---- */
+.messageBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--darkgreen);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.messageBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}

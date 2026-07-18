@@ -1,0 +1,76 @@
+.achievementsSection {
+  background: var(--green-mid);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.achievementsSection h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 60px;
+  letter-spacing: 0.3px;
+}
+
+.achievementsGrid {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.achievementsRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.achievementsRow:last-child {
+  margin-bottom: 0;
+}
+
+.achievementItem {
+  flex: 1;
+  padding: 0 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.achievementItem:last-child {
+  border-right: none;
+}
+
+.achievementItem h3 {
+  font-size: 62px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+}
+
+.achievementItem p {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================================
+   RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .achievementsRow {
+    flex-wrap: wrap;
+  }
+  .achievementItem {
+    flex: 0 0 50%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .achievementItem {
+    flex: 0 0 100%;
+  }
+}

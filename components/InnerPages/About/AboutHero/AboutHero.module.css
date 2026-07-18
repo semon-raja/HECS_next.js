@@ -1,0 +1,135 @@
+.aboutHero {
+  position: relative;
+  padding: 50px 0 100px;
+  text-align: center;
+  background: linear-gradient(180deg, #f0faf0 0%, #e2f5e2 50%, #eaf7ea 100%);
+  overflow: visible;
+  display: block;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.aboutHero::before,
+.aboutHero::after {
+  content: "°o°";
+  position: absolute;
+  color: #4ade80;
+  font-size: 30px;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.aboutHero::before {
+  left: 5%;
+  top: 55%;
+}
+
+.aboutHero::after {
+  right: 7%;
+  top: 25%;
+  font-size: 22px;
+}
+
+.aboutHeroInner {
+  position: relative;
+  width: 82%;
+  max-width: 860px;
+  padding: 0;
+  margin: 0 auto 60px;
+  z-index: 2;
+}
+
+.newsBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.aboutHero h1 {
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--dark);
+  margin-top: 18px;
+  text-align: center;
+}
+
+.aboutGalleryWrap {
+  background: var(--white);
+}
+
+.aboutSingleImg {
+  display: block;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.followUsBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8px 26px;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.socialBox {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.socialBox:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .aboutHero {
+    padding-bottom: 60px;
+  }
+  .aboutHero h1 {
+    font-size: 32px;
+  }
+  .followUsBar {
+    margin-bottom: 0;
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutHero h1 {
+    font-size: 26px;
+  }
+  .aboutGalleryWrap {
+    display: none;
+  }
+  .followUsBar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 18px;
+    position: relative;
+    top: -60px;
+    margin-bottom: 0;
+  }
+}

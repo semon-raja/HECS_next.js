@@ -1,0 +1,89 @@
+.sdgSection {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.sdgContainer {
+  width: 85%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.sdgContainer h2 {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sdgGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.sdgCard {
+  background: #fff;
+  padding: 40px;
+  min-height: 400px;
+  border: 1px solid #ececec;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  transition: 0.35s ease;
+}
+
+.sdgCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.sdgCard img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  margin-bottom: 35px;
+}
+
+.sdgCard h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+.sdgCard p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #5c6575;
+}
+
+@media (max-width: 1024px) {
+  .sdgGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sdgContainer {
+    width: 92%;
+  }
+
+  .sdgContainer h2 {
+    font-size: 34px;
+  }
+
+  .sdgCard {
+    padding: 28px 22px;
+    min-height: auto;
+  }
+
+  .sdgCard h3 {
+    font-size: 22px;
+  }
+
+  .sdgCard p {
+    font-size: 16px;
+  }
+}

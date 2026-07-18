@@ -1,0 +1,168 @@
+.contactSection {
+  display: flex;
+  min-height: 640px;
+}
+
+.contactFormPanel {
+  width: 44%;
+  background: #8fd47a;
+  padding: 40px 12px 40px 40px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactIntro h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contactIntro p {
+  font-size: 14px;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contactFormCard {
+  background: var(--green-mid);
+  border-radius: 14px;
+  padding: 30px 32px 36px;
+  flex: 1;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.contactForm label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.contactForm input,
+.contactForm textarea {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-family: 'Satoshi', sans-serif;
+  outline: none;
+  background: #fff;
+  transition: box-shadow 0.2s;
+  width: 100%;
+  max-width: 320px;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.contactForm textarea {
+  min-height: 50px;
+  resize: vertical;
+  margin-top: 0;
+}
+
+.formButtons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btnSubmit {
+  background: #e8e8e8;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 4px 14px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: 'Satoshi', sans-serif;
+  cursor: pointer;
+  transition: background 0.22s;
+}
+
+.btnSubmit:hover {
+  background: #d8d8d8;
+}
+
+.btnReset {
+  background: #e8e8e8;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 4px 14px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: 'Satoshi', sans-serif;
+  cursor: pointer;
+  transition: background 0.22s;
+}
+
+.btnReset:hover {
+  background: #d8d8d8;
+}
+
+.contactMapPanel {
+  width: 56%;
+  background: #8fd47a;
+  padding: 40px 40px 40px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactMapCard {
+  background: var(--green);
+  border-radius: 14px;
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.contactMapCard iframe {
+  flex: 1;
+  min-height: 0;
+  border-radius: 10px;
+  border: 0;
+}
+
+@media (max-width: 1024px) {
+  .contactSection {
+    flex-direction: column;
+  }
+  .contactFormPanel {
+    width: 100%;
+    padding: 50px 24px;
+  }
+  .contactMapPanel {
+    width: 100%;
+    padding: 0 24px 40px;
+  }
+  .contactMapCard {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contactForm input,
+  .contactForm textarea {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,86 @@
+/* ============================================================
+   PAGE HEADER / BREADCRUMB
+   ============================================================ */
+
+.pageHeader {
+  position: relative;
+  padding: 70px 0 50px;
+  background: linear-gradient(135deg, #dde9ea 0%, #eef3f1 55%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.pageHeader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/images/line-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 60%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.pageHeaderInner {
+  position: relative;
+  width: 82%;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.pageHeaderInner h1 {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.breadcrumb a {
+  color: var(--dark);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--green);
+}
+
+.breadcrumb i {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.current {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* ============================================================
+   RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .pageHeaderInner h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageHeader {
+    padding: 60px 0 40px;
+  }
+  .pageHeaderInner h1 {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,171 @@
+/* ============================================================
+   HERO — scoped CSS Module
+   Covers: .hero, .heroNavBtn, .heroPrev, .heroNext,
+           .slide, .overlayCard, .overlayText,
+           .servicesBtn
+   ============================================================
+   NOTE: .badge is intentionally kept in globals.css because
+   it is reused across the About page hero and other sections.
+   ============================================================ */
+
+/* ---- Hero section wrapper ---- */
+.hero {
+  position: relative;
+  height: calc(100vh - 123px);
+  min-height: 600px;
+  overflow: hidden;
+}
+
+/* ---- Custom nav arrows ---- */
+.heroNavBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  color: #222;
+  font-size: 16px;
+}
+
+.heroPrev {
+  left: 30px;
+}
+
+.heroNext {
+  right: 30px;
+}
+
+.heroNavBtn:hover {
+  background: var(--green);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(102, 192, 77, 0.5);
+  /* preserve the translateY(-50%) centering while scaling */
+  transform: translateY(-50%) scale(1.08);
+}
+
+.heroNavBtn i {
+  pointer-events: none;
+}
+
+/* ---- Individual slide ---- */
+.slide {
+  position: relative;
+  height: calc(100vh - 123px);
+  min-height: 600px;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- Glassmorphism overlay card ---- */
+.overlayCard {
+  position: absolute;
+  bottom: 20px;
+  left: 80px;
+  right: 80px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 40px;
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  gap: 30px;
+}
+
+/* ---- Text block inside the card ---- */
+.overlayText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.overlayCard h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--dark);
+  margin: 0;
+}
+
+.overlayCard p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ---- CTA button ---- */
+.servicesBtn {
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Satoshi', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  transition: background 0.22s, transform 0.18s;
+}
+
+.servicesBtn:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (≤ 1024px)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .overlayCard {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 24px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .overlayCard h1 {
+    font-size: 28px;
+  }
+
+  .overlayCard p {
+    font-size: 15px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (≤ 600px)
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .overlayCard h1 {
+    font-size: 22px;
+  }
+}

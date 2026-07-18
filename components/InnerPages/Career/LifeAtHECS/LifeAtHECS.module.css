@@ -1,0 +1,184 @@
+.lifeHecs {
+  padding: 90px 0 100px;
+  background: var(--off-white);
+}
+
+.lifeHecsInner {
+  width: 88%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.lifeHecsHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.lifeHecsHeader h2 {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 18px;
+}
+
+.lifeHecsHeader p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.lifeHecsSliderViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.lifeHecsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lifeCol {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.lifeColImg {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.lifeColContent {
+  padding: 28px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.lifeLabel {
+  background: #e6f2e0;
+  border-radius: 12px;
+  text-align: center;
+  padding: 14px 20px 12px;
+  margin-bottom: 16px;
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lifeLabelTitle {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.lifeLabelSub {
+  display: block;
+  font-size: 14px;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.lifeDesc {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.lifeDots {
+  display: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.lifeDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s;
+}
+
+.lifeDot.active {
+  background: var(--green);
+}
+
+@media (max-width: 1024px) {
+  .lifeHecs {
+    padding: 50px 0 60px;
+  }
+
+  .lifeHecsInner {
+    width: 92%;
+  }
+
+  .lifeHecsHeader {
+    margin-bottom: 40px;
+  }
+
+  .lifeHecsHeader h2 {
+    font-size: 40px;
+  }
+
+  .lifeHecsHeader p {
+    font-size: 19px;
+  }
+
+  .lifeColImg {
+    height: 220px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .lifeLabelTitle {
+    font-size: 17px;
+  }
+
+  .lifeDesc {
+    font-size: 15px;
+  }
+
+  /* life-hecs mobile slider */
+  .lifeHecsSliderViewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .lifeHecsGrid {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0 !important;
+    width: 300%;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    align-items: stretch;
+  }
+
+  .lifeCol {
+    flex: 0 0 33.3333%;
+    box-sizing: border-box;
+    padding: 0 8px;
+  }
+
+  .lifeDots {
+    display: none !important;
+  }
+}

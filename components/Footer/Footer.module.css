@@ -1,0 +1,130 @@
+/* ============================================================
+   FOOTER — scoped CSS Module
+   Covers: .siteFooter, .footerTop, .footerBrand, .footerLogo,
+           .footerSocials, .socialIconWrap, .footerCol,
+           .footerBottom
+   ============================================================ */
+
+/* ---- Root footer element ---- */
+.siteFooter {
+  position: relative;
+  background: #68c04b;
+  padding: 60px 0 0;
+  margin-top: 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Decorative grid / line background overlay */
+.siteFooter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/images/line-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 55%;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* ---- Top grid (brand + 4 columns) ---- */
+.footerTop {
+  position: relative;
+  width: 88%;
+  max-width: 1380px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 55px;
+  z-index: 2;
+}
+
+/* ---- Brand column ---- */
+.footerLogo {
+  height: 48px;
+  margin-bottom: 18px;
+  filter: none;
+}
+
+.footerBrand p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 340px;
+}
+
+/* ---- Social icons row ---- */
+.footerSocials {
+  display: flex;
+  margin-top: 22px;
+}
+
+.socialIconWrap {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.socialIconWrap:hover {
+  background: #fff;
+  color: #68c04b;
+}
+
+/* ---- Link columns ---- */
+.footerCol h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.footerCol a {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 14px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.footerCol a:hover {
+  transform: translateX(5px);
+}
+
+/* ---- Bottom copyright bar ---- */
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE — 1100px
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .footerTop {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+  }
+}
