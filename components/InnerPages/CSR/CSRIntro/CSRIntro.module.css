@@ -23,11 +23,16 @@
   color: #5c6575;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .introInner {
     width: 92%;
   }
+  .introInner h2 {
+    font-size: 44px;
+  }
+}
 
+@media (max-width: 400px) {
   .introInner h2 {
     font-size: 34px;
   }

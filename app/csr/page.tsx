@@ -13,7 +13,7 @@ import {
   educationFocus,
   environmentFocus,
   safeWaterMessage,
-} from "@/components/InnerPages/CSR/data";
+} from "@/data/data";
 
 export const metadata: Metadata = {
   title: "CSR - HECS | India's Leading Environmental Solutions Provider",

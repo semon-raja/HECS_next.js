@@ -78,11 +78,7 @@
 }
 
 .blogCardBody h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--dark);
-    line-height: 1.5;
-}
+
 
 @media (max-width: 1024px) {
     .blogGrid {
@@ -90,25 +86,21 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .blogGrid {
         grid-template-columns: 1fr;
     }
-
     .blogTopRow {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
-
     .blogInner {
         width: 90%;
     }
-
     .blogSection {
         padding: 60px 0 60px;
     }
-
     .blogHeading {
         font-size: 28px;
     }

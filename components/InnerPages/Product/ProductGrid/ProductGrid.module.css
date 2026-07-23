@@ -119,20 +119,10 @@
   }
 }
 
-@media (max-width: 640px) {
-  .productGrid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .productCard:last-child {
-    grid-column: auto;
-  }
+@media (max-width: 400px) {
   .productCards {
     padding: 40px 0 70px;
   }
-}
-
-@media (max-width: 600px) {
   .productGrid {
     grid-template-columns: 1fr;
     gap: 16px;

@@ -9,6 +9,7 @@ import Badge from "@/components/UI/Badge/Badge";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const slides = [
     {

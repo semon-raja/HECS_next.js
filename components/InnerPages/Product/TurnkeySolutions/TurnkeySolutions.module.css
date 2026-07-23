@@ -1,0 +1,314 @@
+.section {
+  padding: 100px 0;
+}
+
+.container {
+  width: 82%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.bannerWrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+/* ─── Sidebar ─────────────────────────────────────── */
+
+.sidebar {
+  width: 400px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main menu group */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each parent item is its own card */
+.menuItem {
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Items WITH dropdown */
+.menuButton {
+  width: 100%;
+  padding: 26px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f5f5f7;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: left;
+  border-radius: 12px;
+}
+
+.menuIcon {
+  font-size: 18px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Items WITHOUT dropdown (Effluent Treatment Plant) */
+.menuButtonPlain {
+  width: 100%;
+  padding: 26px 22px;
+  display: flex;
+  align-items: center;
+  background: #f5f5f7;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  border-radius: 12px;
+}
+
+/* Animated sub-menu */
+.subMenuWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.subMenuWrapperOpen {
+  max-height: 500px;
+}
+
+.subMenu {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0 0 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Each sub-item is its own grey card with white gaps between */
+.subMenuItem {
+  background: #f5f5f7;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 16px;
+}
+
+.subMenuItem a {
+  display: block;
+  padding: 18px 18px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ─── Service Brochure (separate card) ────────────── */
+
+.serviceBrochureCard {
+  margin-top: 80px;
+  background: #f5f5f7;
+  border-radius: 12px;
+  padding: 26px 18px;
+}
+
+.serviceBrochureTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 14px 4px;
+}
+
+.pdfDownloadBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pdfDownloadBtn i {
+  color: #666;
+  font-size: 18px;
+  transition: color 0.2s ease;
+}
+
+.pdfDownloadBtn:hover i {
+  color: #3a9e3a;
+}
+
+/* ─── Consultation Card ───────────────────────────── */
+
+.consultationCard {
+  margin-top: 16px;
+  background: var(--green);
+  border-radius: 14px;
+  padding: 62px 28px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.consultationHeading {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contactIcon {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contactLabel {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 4px;
+}
+
+.contactPhone {
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.consultationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.consultationBtn:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+.consultationArrow {
+  font-size: 18px;
+  color: var(--green);
+}
+
+/* ─── Main content ────────────────────────────────── */
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.contentHeading {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.25;
+  text-align: justify;
+  margin: 0 0 24px;
+}
+
+.contentImageWrapper {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.contentImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contentPara {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #333;
+  text-align: justify;
+  margin: 0 0 18px;
+}
+
+.contentPara strong {
+  font-weight: 700;
+  color: #111;
+}
+
+.proofHeading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 28px 0 16px;
+}
+
+.proofList {
+  list-style: disc;
+  padding-left: 22px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.proofList li {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.proofList li strong {
+  font-weight: 700;
+  color: #111;
+}

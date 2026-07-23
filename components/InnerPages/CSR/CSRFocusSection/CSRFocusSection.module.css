@@ -48,17 +48,15 @@
     flex-direction: column;
     align-items: stretch;
   }
-
   .focusText h2 {
     font-size: 48px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 400px) {
   .focusText h2 {
     font-size: 34px;
   }
-
   .focusText p {
     font-size: 16px;
   }

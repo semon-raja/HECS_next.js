@@ -148,3 +148,16 @@
     padding: 0 24px;
   }
 }
+
+@media (max-width: 400px) {
+  .careerOpeningsInner {
+    padding: 40px 18px;
+  }
+  .careerOpenings h2 {
+    font-size: 28px;
+  }
+  .careerButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

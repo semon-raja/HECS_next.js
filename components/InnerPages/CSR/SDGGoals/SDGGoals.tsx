@@ -1,4 +1,4 @@
-import { sdgItems } from "../data";
+import { sdgItems } from "../../../../data/data";
 import styles from "./SDGGoals.module.css";
 
 export default function SDGGoals() {

@@ -53,10 +53,12 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* ============================================================
-   RESPONSIVENESS
-   ============================================================ */
+/* Desktop */
+@media (min-width: 1025px) {
+  /* Desktop styles */
+}
 
+/* Tablet */
 @media (max-width: 1024px) {
   .achievementsRow {
     flex-wrap: wrap;
@@ -69,7 +71,8 @@
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile */
+@media (max-width: 400px) {
   .achievementItem {
     flex: 0 0 100%;
   }

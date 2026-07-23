@@ -49,7 +49,8 @@
   background: transparent;
 }
 
-.dot1, .dot2 {
+.dot1,
+.dot2 {
   width: 4px;
   height: 4px;
   border-radius: 50%;
@@ -70,4 +71,25 @@
   background: rgba(255, 255, 255, 0.95);
   border-color: transparent;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.newsSolid {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  /* Desktop styles */
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  /* Tablet styles */
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  /* Mobile styles */
 }

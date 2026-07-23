@@ -1,12 +1,4 @@
-/* ============================================================
-   NAVBAR — scoped CSS Module
-   Covers: .navbar, .logo, .nav-panel, .nav-links, .nav-item,
-           .dropdown, .mega-dropdown, .nav-cta, .hamburger,
-           .nav-right-cluster, .nav-overlay, .nav-close,
-           .nav-panel-header, .dropdown-toggle, .dropdown-row
-   ============================================================ */
 
-/* ---- Core navbar bar ---- */
 .navbar {
   position: relative;
   height: 82px;
@@ -94,25 +86,7 @@
   outline: none;
 }
 
-/* Underline animation */
-.navLinks li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--green);
-  transition: width 0.25s ease;
-}
-
-.navLinks li a:hover {
-  color: var(--green);
-}
-
-.navLinks li a:hover::after {
-  width: 100%;
-}
+/* Underline and color animation removed per user request */
 
 /* ---- Dropdown row (link + toggle button) ---- */
 .dropdownRow {
@@ -152,13 +126,124 @@
   transition: 0.3s;
 }
 
-/* Desktop: rotate chevron on hover */
-.dropdown:hover > a i {
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 8px 20px;
+}
+
+.dropdownItem a {
+  display: block;
+  padding: 0 !important;
+  margin: 0;
+  text-decoration: none;
+  color: #101828;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.dropdownItem i {
+  font-size: 10px;
+  color: #101828;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.subDropdown {
+  position: relative;
+}
+
+/* Rotate down-arrow to right when hovering a 1st-level item that has a submenu */
+.subDropdown:hover > .dropdownItem i {
   transform: rotate(-90deg);
 }
 
-.dropdown:hover .dropdownToggle i {
+.subMenu {
+  position: absolute;
+  top: 0;
+  left: 98%;
+  min-width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 6px 0;
+  box-shadow: 0 15px 40px rgba(0,0,0,.18);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: .25s;
+}
+
+.subMenu.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.subMenu a {
+  display: block;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #101828;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.thirdDropdown {
+    position: relative;
+}
+
+/* Rotate down-arrow to right when hovering a 2nd-level item that has a third-level menu */
+.thirdDropdown:hover > .dropdownItem i {
   transform: rotate(-90deg);
+}
+
+.thirdMenu {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 8px);
+
+    min-width: 220px;
+
+    background: #fff;
+    border-radius: 10px;
+    padding: 6px 0;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .25s;
+}
+
+.thirdMenu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.thirdMenu a {
+    display: block;
+    padding: 8px 20px;
+    color: #101828;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Desktop: rotate top-nav chevron-down to point RIGHT on hover */
+@media (min-width: 1025px) {
+  .dropdown:hover > a i {
+    transform: rotate(-90deg);
+  }
+
+  .dropdown:hover .dropdownToggle i {
+    transform: rotate(-90deg);
+  }
 }
 
 /* ---- Mega dropdown panel ---- */
@@ -167,10 +252,10 @@
   top: 60px;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 360px;
+  min-width: 240px;
   background: #fff;
-  border-radius: 16px;
-  padding: 18px 0;
+  border-radius: 12px;
+  padding: 6px 0;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
   opacity: 0;
   visibility: hidden;
@@ -205,12 +290,13 @@
 /* Links inside mega dropdown */
 .megaDropdown a {
   display: block;
-  padding: 18px 38px;
+  padding: 8px 20px;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   color: #101828;
   line-height: 1.4;
+  white-space: nowrap;
   transition: 0.25s;
   outline: none;
   border-left: none;
@@ -390,6 +476,10 @@
     border-bottom: 1px solid #f0f0f0;
   }
 
+  .navLinks a:hover {
+    color: var(--green);
+  }
+
   .megaDropdown {
     display: none;
     position: static;
@@ -436,6 +526,14 @@
 
   .dropdownToggle {
     padding: 14px 4px;
+  }
+
+  .dropdownToggle i {
+    transform: rotate(-90deg);
+  }
+
+  .dropdown.mobileOpen .dropdownToggle i {
+    transform: rotate(0deg);
   }
 }
 

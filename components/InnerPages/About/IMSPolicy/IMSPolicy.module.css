@@ -23,3 +23,12 @@
     font-size: 32px;
   }
 }
+
+@media (max-width: 400px) {
+  .imsSection {
+    padding: 60px 0;
+  }
+  .imsSection h2 {
+    font-size: 26px;
+  }
+}

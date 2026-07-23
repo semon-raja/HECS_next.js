@@ -194,7 +194,7 @@
     width: 92%;
   }
   .testimonialsHeader h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
   .testimonialsHeader p {
     font-size: 15px;
@@ -208,5 +208,17 @@
   }
   .tcardBody {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .testimonialsSection {
+    padding: 40px 0 50px;
+  }
+  .testimonialsHeader h2 {
+    font-size: 28px;
+  }
+  .tcardBody {
+    font-size: 14px; /* Slightly larger on very small screens for legibility */
   }
 }

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { recentWorks } from "@/data/recentwork";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Badge from "@/components/UI/Badge/Badge";
 import styles from "./RecentWork.module.css";
@@ -41,6 +42,8 @@ export default function RecentWork() {
 
       <div className={styles.recentWorkWrapper}>
         <Swiper
+          modules={[Autoplay]}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -60,7 +63,7 @@ export default function RecentWork() {
           }}
           className="recent-work-slider"
         >
-          {recentWorks.map((work, index) => (
+          {[...recentWorks, ...recentWorks].map((work, index) => (
             <SwiperSlide key={index}>
               <div className={styles.workCard}>
                 <div className={styles.workCardImgWrap}>

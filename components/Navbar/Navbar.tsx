@@ -6,10 +6,6 @@ import styles from "./Navbar.module.css";
 interface NavbarProps {
   navClass?: string;
 }
-
-// Map the prop string from Header.tsx to the CSS Module class key.
-// Header passes: "" | "move-up" | "hide"
-// CSS Module keys: moveUp | hide
 const navClassMap: Record<string, string> = {
   "blur": styles.blur,
 };
@@ -17,6 +13,8 @@ const navClassMap: Record<string, string> = {
 export default function Navbar({ navClass = "" }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState<string | null>(null);
+  const [openThirdDropdown, setOpenThirdDropdown] = useState<string | null>(null);
 
   // Build the root <nav> className
   const navClassName = [
@@ -57,7 +55,7 @@ export default function Navbar({ navClass = "" }: NavbarProps) {
         <ul className={styles.navLinks}>
 
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
           </li>
 
           {/* About dropdown */}
@@ -79,16 +77,16 @@ export default function Navbar({ navClass = "" }: NavbarProps) {
             </div>
 
             <div className={`${styles.megaDropdown}${openDropdown === "about" ? " " + styles.open : ""}`}>
-              <a href="#">Board of Directors</a>
-              <a href="#">Accreditations</a>
-              <a href="#">Awards and Accolades</a>
+              <Link href="/about/board-of-directors" onClick={() => setMenuOpen(false)}>Board of Directors</Link>
+              <Link href="/about/accreditations" onClick={() => setMenuOpen(false)}>Accreditations</Link>
+              <Link href="/about/awards-and-accolades" onClick={() => setMenuOpen(false)}>Awards and Accolades</Link>
             </div>
           </li>
 
           {/* Products & Services dropdown */}
           <li className={`${styles.navItem} ${styles.dropdown}${openDropdown === "products" ? " " + styles.mobileOpen : ""}`}>
             <div className={styles.dropdownRow}>
-              <Link href="/product">
+              <Link href="/product" onClick={() => setMenuOpen(false)}>
                 Our Products &amp; Services
               </Link>
               <button
@@ -105,24 +103,217 @@ export default function Navbar({ navClass = "" }: NavbarProps) {
               </button>
             </div>
 
-            <div className={`${styles.megaDropdown}${openDropdown === "products" ? " " + styles.open : ""}`}>
-              <a href="#">Turnkey Solutions</a>
-              <a href="#">Laboratory Services</a>
-              <a href="#">Consultancy Services</a>
-              <a href="#">Operation and Maintenance</a>
-              <a href="#">Packaged Sewage Treatment Plants</a>
-              <a href="#">BI Marketing and Services</a>
+            <div
+                className={`${styles.megaDropdown}${
+                  openDropdown === "products" ? " " + styles.open : ""
+                }`}
+             >
+                <div
+                  className={styles.subDropdown}
+                  onMouseEnter={() => setOpenSubDropdown("turnkey")}
+                  onMouseLeave={() => setOpenSubDropdown(null)}
+                >
+                  <div className={styles.dropdownItem}>
+                    <Link
+                      href="/product/turnkey-solutions"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Turnkey Solutions
+                    </Link>
+
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </div>
+
+                  <div
+                    className={`${styles.subMenu} ${
+                      openSubDropdown === "turnkey" ? styles.open : ""
+                    }`}
+                  >
+                    <div
+                      className={styles.thirdDropdown}
+                      onMouseEnter={() => setOpenThirdDropdown("water")}
+                      onMouseLeave={() => setOpenThirdDropdown(null)}
+                    >
+                      <div className={styles.dropdownItem}>
+                        <Link href="#">Water Treatment Plant</Link>
+
+                        <i className="fa-solid fa-chevron-down"></i>
+                      </div>
+
+                      <div
+                        className={`${styles.thirdMenu} ${
+                          openThirdDropdown === "water" ? styles.open : ""
+                        }`}
+                      >
+                        <Link href="#">Drinking Water Treatment Plant</Link>
+
+                        <Link href="#">High Purity Water Treatment Plant</Link>
+
+                        <Link href="#">Industrial Water Treatment Plant</Link>
+
+                        <Link href="#">Desalination Plant Solutions</Link>
+                      </div>
+                    </div>
+                    <div
+                      className={styles.thirdDropdown}
+                      onMouseEnter={() => setOpenThirdDropdown("sewage")}
+                      onMouseLeave={() => setOpenThirdDropdown(null)}
+                    >
+                      <div className={styles.dropdownItem}>
+                        <Link href="#">Sewage Recycle Plant</Link>
+
+                        <i className="fa-solid fa-chevron-down"></i>
+                      </div>
+
+                      <div
+                        className={`${styles.thirdMenu} ${
+                          openThirdDropdown === "sewage" ? styles.open : ""
+                        }`}
+                      >
+                        <Link href="#">Activated Sludge Process (ASP)</Link>
+
+                        <Link href="#">Sequential Batch Reactor (SBR)</Link>
+
+                        <Link href="#">Membrane Bioreactor (MBR)</Link>
+
+                        <Link href="#">Moving Bed Biofilm Reactor (MBBR)</Link>
+                      </div>
+                    </div>
+                    <Link href="#">Effluent Treatment Plant &amp; ZLD</Link>
+                    <div
+                      className={styles.thirdDropdown}
+                      onMouseEnter={() => setOpenThirdDropdown("air")}
+                      onMouseLeave={() => setOpenThirdDropdown(null)}
+                    >
+                      <div className={styles.dropdownItem}>
+                        <Link href="#">Air Pollution Control</Link>
+
+                        <i className="fa-solid fa-chevron-down"></i>
+                      </div>
+
+                      <div
+                        className={`${styles.thirdMenu} ${
+                          openThirdDropdown === "air" ? styles.open : ""
+                        }`}
+                      >
+                        <Link href="#">Scrubber</Link>
+                      </div>
+                    </div>
+                    <div
+                      className={styles.thirdDropdown}
+                      onMouseEnter={() => setOpenThirdDropdown("solid")}
+                      onMouseLeave={() => setOpenThirdDropdown(null)}
+                    >
+                      <div className={styles.dropdownItem}>
+                        <Link href="#">Solid Waste Management</Link>
+
+                        <i className="fa-solid fa-chevron-down"></i>
+                      </div>
+
+                      <div
+                        className={`${styles.thirdMenu} ${
+                          openThirdDropdown === "solid" ? styles.open : ""
+                        }`}
+                      >
+                        <Link href="#">Sludge Management</Link>
+
+                        <Link href="#">Waste to Energy</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={styles.subDropdown}
+                  onMouseEnter={() => setOpenSubDropdown("lab")}
+                  onMouseLeave={() => setOpenSubDropdown(null)}
+                >
+                  <div className={styles.dropdownItem}>
+                    <Link
+                      href="/product/laboratory-services"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Laboratory Services
+                    </Link>
+
+                    <i className="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                  <div
+                    className={`${styles.subMenu} ${
+                      openSubDropdown === "lab" ? styles.open : ""
+                    }`}
+                  >
+                    <Link href="#">Environmental Testing</Link>
+                    <Link href="#">Water Testing</Link>
+                    <Link href="#">Food Testing</Link>
+                    <Link href="#">Pharmaceutical Testing</Link>
+                    <Link href="#">Purity Portal</Link>
+                    <Link href="#">Research & Development</Link>
+                    <Link href="#">Education & Training Division</Link>
+                  </div>
+                </div>
+
+                <div className={styles.dropdownItem}>
+                  <Link href="/product/consultancy-services" onClick={() => setMenuOpen(false)}>
+                    Consultancy Services
+                  </Link>
+                </div>
+
+                <div
+                  className={styles.subDropdown}
+                  onMouseEnter={() => setOpenSubDropdown("operation")}
+                  onMouseLeave={() => setOpenSubDropdown(null)}
+                >
+                  <div className={styles.dropdownItem}>
+                    <Link
+                      href="/product/operation-and-maintenance"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Operation and Maintenance
+                    </Link>
+
+                    <i className="fa-solid fa-chevron-down"></i>
+                  </div>
+
+                  <div
+                    className={`${styles.subMenu} ${
+                      openSubDropdown === "operation" ? styles.open : ""
+                    }`}
+                  >
+                    <Link href="#">Chemicals</Link>
+                    <Link href="#">Spares and Consumables</Link>
+                  </div>
+                </div>
+
+                <div className={styles.dropdownItem}>
+                  <Link href="/product/packaged-sewage-treatment-plants" onClick={() => setMenuOpen(false)}>
+                    Packaged Sewage Treatment Plants
+                  </Link>
+                </div>
+
+                <div className={styles.dropdownItem}>
+                  <Link href="/product/solar-energy-solutions" onClick={() => setMenuOpen(false)}>
+                    Solar Energy Solutions
+                  </Link>
+                </div>
+
+                <div className={styles.dropdownItem}>
+                  <Link href="/product/bi-marketing-and-services" onClick={() => setMenuOpen(false)}>
+                    BI Marketing and Services
+                  </Link>
+                </div>
             </div>
           </li>
 
           <li>
-            <Link href="/career">Careers</Link>
+            <Link href="/career" onClick={() => setMenuOpen(false)}>Careers</Link>
           </li>
 
           {/* Resources dropdown */}
           <li className={`${styles.navItem} ${styles.dropdown}${openDropdown === "resources" ? " " + styles.mobileOpen : ""}`}>
             <div className={styles.dropdownRow}>
-              <Link href="/resources">Resources</Link>
+              <Link href="/resources" onClick={() => setMenuOpen(false)}>Resources</Link>
               <button
                 className={styles.dropdownToggle}
                 type="button"
@@ -147,7 +338,7 @@ export default function Navbar({ navClass = "" }: NavbarProps) {
           </li>
 
           <li>
-            <Link href="/csr">CSR</Link>
+            <Link href="/csr" onClick={() => setMenuOpen(false)}>CSR</Link>
           </li>
 
         </ul>

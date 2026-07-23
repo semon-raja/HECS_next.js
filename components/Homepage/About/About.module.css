@@ -160,10 +160,12 @@
   color: var(--text);
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+/* Desktop */
+@media (min-width: 1025px) {
+  /* Desktop styles */
+}
 
+/* Tablet */
 @media (max-width: 1024px) {
   .aboutContainer {
     flex-direction: column;
@@ -184,7 +186,8 @@
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile */
+@media (max-width: 400px) {
   .aboutInner {
     width: 92%;
   }

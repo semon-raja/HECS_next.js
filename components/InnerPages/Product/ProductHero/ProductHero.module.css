@@ -48,34 +48,18 @@
   }
 }
 
-@media (max-width: 640px) {
-  .productsIntro {
-    padding: 36px 0 28px;
-  }
-  .productsIntro h2 {
-    font-size: 32px;
-  }
-  .productsIntro h3 {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .productsIntro {
     padding: 32px 0 24px;
-    text-align: center;
   }
   .productsIntroInner {
     width: 92%;
-    text-align: center;
   }
   .productsIntro h2 {
-    font-size: 39px;
+    font-size: 32px;
     margin: 20px 0 10px;
-    text-align: center;
   }
   .productsIntro h3 {
-    font-size: 38px;
-    text-align: center;
+    font-size: 22px;
   }
 }

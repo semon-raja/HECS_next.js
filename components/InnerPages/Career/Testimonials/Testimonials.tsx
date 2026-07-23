@@ -184,8 +184,8 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Navigation dots — hidden on mobile, shown on tablet & desktop */}
-        <div className={`${styles.testimonialsDots} ${viewMode === "mobile" ? styles.testimonialsDotsHidden : ""}`}>
+        {/* Navigation dots */}
+        <div className={styles.testimonialsDots}>
           {positions.map((pos, i) => (
             <button
               key={i}

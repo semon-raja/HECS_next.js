@@ -54,6 +54,13 @@
     width: 100%;
     flex: none;
   }
+  .ceoPhoto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
+    aspect-ratio: unset;
+  }
   .ceoText h2 {
     font-size: 32px;
   }
@@ -62,20 +69,8 @@
   }
 }
 
-@media (max-width: 900px) {
-  .ceoInner {
-    flex-direction: column !important;
-    gap: 30px !important;
-    width: 92% !important;
-  }
-  .ceoPhoto {
-    width: 100% !important;
-    flex: none !important;
-  }
-  .ceoPhoto img {
-    width: 100% !important;
-    height: 280px !important;
-    object-fit: cover !important;
-    border-radius: 14px !important;
+@media (max-width: 400px) {
+  .ceoText h2 {
+    font-size: 26px;
   }
 }

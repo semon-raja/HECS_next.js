@@ -151,9 +151,6 @@
   color: var(--muted);
 }
 
-/* ============================================================
-   RESPONSIVENESS
-   ============================================================ */
 
 @media (max-width: 1024px) {
   .newsHeader {
@@ -171,7 +168,8 @@
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile */
+@media (max-width: 400px) {
   .newsSection {
     width: 92%;
   }

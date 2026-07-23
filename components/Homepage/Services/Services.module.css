@@ -204,30 +204,18 @@
   transform: translateY(-1px);
 }
 
-/* ============================================================
-   RESPONSIVENESS
-   ============================================================ */
-
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
   .servicesWrapper {
     flex-direction: column;
   }
   .serviceMenu {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
   }
   .serviceBtn {
     width: 100%;
-  }
-  .serviceImage {
-    width: 40%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .serviceBtn {
     flex: unset;
   }
   .serviceDisplay {
@@ -246,13 +234,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  .serviceMenu {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
+/* Mobile */
+@media (max-width: 400px) {
   .servicesIntro {
     width: 92%;
   }

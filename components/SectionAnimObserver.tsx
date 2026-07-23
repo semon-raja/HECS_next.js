@@ -2,12 +2,6 @@
 
 import { useEffect } from "react";
 
-/**
- * Attaches an IntersectionObserver to every `.section-anim` element
- * on the page and adds the `visible` class when the element scrolls
- * into view. Safe to mount multiple times — each observer only watches
- * elements that haven't been made visible yet.
- */
 export default function SectionAnimObserver() {
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>(".section-anim");

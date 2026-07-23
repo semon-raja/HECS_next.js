@@ -128,3 +128,19 @@
     grid-column: 1 / -1;
   }
 }
+
+
+/* Desktop */
+@media (min-width: 1025px) {
+  /* Desktop styles */
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  /* Tablet styles */
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  /* Mobile styles */
+}

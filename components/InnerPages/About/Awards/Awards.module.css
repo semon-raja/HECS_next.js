@@ -1,0 +1,106 @@
+.section {
+  padding: 80px 0 100px;
+  background: var(--white);
+}
+
+.container {
+  width: 82%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 48px;
+  font-weight: 400;
+  color: #101828;
+  margin-bottom: 80px;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hide duplicates on desktop */
+.card:nth-child(n+6) {
+  display: none;
+}
+
+.iconWrap {
+  margin-bottom: 24px;
+}
+
+.iconWrap img {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #3f4654;
+  font-weight: 500;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 40px;
+    margin-bottom: 60px;
+  }
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
+  .track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: scrollLeft 25s linear infinite;
+  }
+  .track:hover {
+    animation-play-state: paused;
+  }
+  .card {
+    width: 260px;
+    padding: 0 20px;
+  }
+  /* Show all items for marquee */
+  .card:nth-child(n+6) {
+    display: flex;
+  }
+}
+
+@media (max-width: 400px) {
+  .section {
+    padding: 50px 0 70px;
+  }
+  .heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .card {
+    width: 220px;
+  }
+}
